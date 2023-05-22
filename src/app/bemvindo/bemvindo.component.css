@@ -1,0 +1,12 @@
+.txt-t1{
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.txt-normal{
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-indent: 10px;
+  position: static;
+}
