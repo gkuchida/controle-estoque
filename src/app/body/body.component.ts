@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
@@ -13,6 +12,7 @@ export class BodyComponent {
   dayOfWeek: string;
   formattedDate: string;
   conteudoVisivel: boolean = false;
+
   constructor(private router:Router){
     this.currentDate = new Date();
     this.dayOfWeek = this.currentDate.toLocaleString('default', {weekday:'long'});

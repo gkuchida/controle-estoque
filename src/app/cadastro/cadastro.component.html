@@ -1,9 +1,15 @@
 <body class="grey lighten-3">
-  <!-- <link rel="stylesheet" href="cadastro.component.css"> -->
+  <link rel="stylesheet" href="cadastro.component.css">
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-  <h1 style="text-align: center;">PÁGINA EM CONSTRUÇÃO!</h1>
-  <!-- <div class="row">
+  <!-- <h1 style="text-align: center;">PÁGINA EM CONSTRUÇÃO!</h1> -->
+ <!-- <select class="custom-select" aria-label="Default select example">
+                <option selected>Selecione</option>
+                <option value="1">Geladeira</option>
+                <option value="2">Freezer</option>
+              </select> -->
+
+<div class="row">
     <div class="col s3">
       <div class="card small card-lateral">
         <div class="card-content">
@@ -34,31 +40,36 @@
             <div class="central-p">
               <p class="txt">Categoria:</p>
             </div>
-            <div class="central-input">
-              <select [(ngModel)]="opcaoSelecionada">
-                <option *ngFor="let opcao of opcoes" [value]="opcao.valor">{{opcao.nome}}</option>
-              </select>
-            </div>
+            <mat-form-field class="categoria" id="categoria">
+              <mat-select [(ngModel)]="selectedCategoria" >
+                <mat-option value="">Selecione uma opção</mat-option>
+                <mat-option value="option1">Carnes</mat-option>
+                <mat-option value="option2">Bebidas</mat-option>
+                <mat-option value="option3">Frutas</mat-option>
+                <mat-option value="option4">Verduras</mat-option>
+                <mat-option value="option5">Mercearia</mat-option>
+              </mat-select>
+            </mat-form-field>
             <br>
             <div class="central-p">
               <p class="txt">Produto:</p>
             </div>
             <div class="central-input">
-              <input class="validate browser-default" style="margin-left: 27px;" placeholder="Digite o nome do produto" id="nome" type="text">
+              <input type="text" id="nome" [(ngModel)]="nome" placeholder="Nome" >
             </div>
             <br>
             <div class="central-p">
               <p class="txt">Marca:</p>
             </div>
             <div class="central-input">
-              <input class="validate browser-default" style="margin-left: 42px;" placeholder="Digite a marca do produto" id="marca" type="text">
+              <input type="text" id="marca" [(ngModel)]="marca" placeholder="Marca">
             </div>
             <br>
             <div class="central-p">
               <p class="txt">Quantidade:</p>
             </div>
             <div class="central-input">
-              <input class="validate browser-default" placeholder="Digite a quantidade" id="quantidade" type="text">
+              <input type="text" id="quantidade" [(ngModel)]="quantidade" placeholder="Quantidade">
             </div>
             <br>
             <div class="central-p">
@@ -67,49 +78,67 @@
             <div class="r-button">
               <p>
                 <label>
-                  <input class="with-gap" name="group3" type="radio">
+                  <input class="with-gap" name="group3" type="radio" value="KG" [(ngModel)] = "selectedUnidade">
                   <span>KG</span>
                 </label>
                 <label>
-                  <input class="with-gap" name="group3" type="radio">
+                  <input class="with-gap" name="group3" type="radio" value="Litro(s)" [(ngModel)] = "selectedUnidade">
                   <span>Litro(s)</span>
                 </label>
                 <label>
-                  <input class="with-gap" name="group3" type="radio">
+                  <input class="with-gap" name="group3" type="radio" value="Pacote(s)" [(ngModel)] = "selectedUnidade">
                   <span>Pacote(s)</span>
                 </label>
                 <label>
-                  <input class="with-gap" name="group3" type="radio">
+                  <input class="with-gap" name="group3" type="radio" value="Unidade(s)" [(ngModel)] = "selectedUnidade">
                   <span>Unidade(s)</span>
                 </label>
                 <label>
-                  <input class="with-gap" name="group3" type="radio">
+                  <input class="with-gap" name="group3" type="radio" value="Caixa(s)" [(ngModel)] = "selectedUnidade">
                   <span>Caixa(s)</span>
                 </label>
               </p>
             </div>
-
+            <br>
             <div class="central-p">
-              <p class="txt">Local de armazenamento:</p>
+              <p class="txt">Local armazenado:</p>
             </div>
-            <div class="central-input">
-
-            </div>
-
+            <mat-form-field class="categoria" id="local">
+              <mat-select [(ngModel)]="selectedLocal" >
+                <mat-option value="">Selecione uma opção</mat-option>
+                <mat-option value="option6">Armário</mat-option>
+                <mat-option value="option7">Freezer</mat-option>
+                <mat-option value="option8">Fruteira</mat-option>
+                <mat-option value="option9">Geladeira</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
             <div class="central-p">
               <p class="txt">Estado da embalagem:</p>
             </div>
-            <div class="central-input">
-
-            </div>
-
-            <div class="central-p">
-              <p class="txt">Data de validade:</p>
-            </div>
-            <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Escolha a data">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-form-field class="categoria" id="estado">
+              <mat-select [(ngModel)]="selectedEstado" >
+                <mat-option value="">Selecione uma opção</mat-option>
+                <mat-option value="option10">Aberta</mat-option>
+                <mat-option value="option11">Fechada</mat-option>
+              </mat-select>
             </mat-form-field>
+
+            <div class="center-container">
+              <a (click)="cadastrar()" class="waves-effect waves-light btn-large btn-salvar"><i class="material-icons left">save</i>Salvar</a>
+            </div>
+
+
+
+
+
+            <!-- <div class="central-p">
+              <p class="txt">Data de validade:</p>
+            </div> -->
+            <!-- <mat-form-field> -->
+              <!-- <input matInput [matDatepicker]="picker" placeholder="Escolha a data">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+            <!-- </mat-form-field>
             <mat-dialog-content>
               <mat-datepicker #picker></mat-datepicker>
             </mat-dialog-content>
@@ -122,12 +151,26 @@
             </div>
             <div class="central-input">
 
-            </div>
+            </div>-->
 
           </div>
         </div>
       </div>
     </div>
-
-  </div> -->
+  </div>
 </body>
+
+
+
+
+
+
+<!-- <mat-form-field>
+  <mat-label>Categoria</mat-label>
+  <mat-select [(ngModel)]="selectedOption">
+    <mat-option value="">Selecione uma opção</mat-option>
+    <mat-option value="option1">Opção 1</mat-option>
+    <mat-option value="option2">Opção 2</mat-option>
+    <mat-option value="option3">Opção 3</mat-option>
+  </mat-select>
+</mat-form-field> -->

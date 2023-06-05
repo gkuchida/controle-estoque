@@ -3,6 +3,10 @@
   <nav>
     <div class="nav-wrapper header-color center-align">
       <span class="text-menu">Controle do Estoque na Despensa</span>
+      <a *ngIf="isCadastro()" [routerLink]="['/cadastro']" (click)="voltar()" class="inicio">Início</a>
+      <a *ngIf="isVisualizar()" [routerLink]="['/visualizar']" (click)="voltar()" class="inicio">Início</a>
+      <a *ngIf="isDetalhes()" routerLink="/" class="inicio">Início</a>
+      <a *ngIf="isDetalhes()" [routerLink]="['/detalhes/:nome']" (click)="voltar()" class="voltar">Voltar</a>
     </div>
   </nav>
 </div>

@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Categoria</th>
+      <th>Nome</th>
+      <th>Marca</th>
+      <th>Quantidade</th>
+      <th>Unidade</th>
+      <th>Local armazenado</th>
+      <th>Estado da embalagem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="produtoDetalhado">
+      <td>{{ selectedCategoria }}</td>
+      <td>{{ produtoDetalhado.nome }}</td>
+      <td>{{ produtoDetalhado.marca }}</td>
+      <td>{{ produtoDetalhado.quantidade }}</td>
+      <td>{{ selectedUnidade }}</td>
+      <td>{{ selectedLocal }}</td>
+      <td>{{ selectedEstado }}</td>
+    </tr>
+  </tbody>
+</table>
