@@ -1,0 +1,74 @@
+.h1{
+  color: #053A80;
+  font-size: 28px;
+  text-align: center;
+  width: max-content;
+}
+
+.table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-left: 40px;
+  margin-top: 50px;
+
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #3f618f;
+  text-align: center;
+  color: #dbfc19;
+  font-weight: normal;
+}
+
+.table td{
+  background-color: #e8eaf6;
+  text-align: center;
+}
+
+.img-card{
+  position: relative;
+  top: 15px;
+  width: 130px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-star{
+  width: 15px;
+  height: auto;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.img-card{
+  position: relative;
+  top: 15px;
+  width: 130px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-lateral{
+  background-color: #E7EFFF;
+  width: 300px;
+  height: 450px;
+  gap: 600px;
+  margin-top: 20px;
+}
+
+.produto{
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+}

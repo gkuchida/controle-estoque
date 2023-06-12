@@ -2,8 +2,7 @@
   <!-- <link rel="stylesheet" href="cadastro.component.css"> -->
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-  <h1 style="text-align: center;">PÁGINA EM CONSTRUÇÃO!</h1>
-  <!-- <div class="row">
+  <div class="row">
     <div class="col s3">
       <div class="card small card-lateral">
         <div class="card-content">
@@ -11,17 +10,19 @@
           <h1 class="h1">Cadastre um Produto</h1>
           <div class="col s12 itens-card">
             <img src="/assets/images/estrela.png" class="img-star">
-            <p>Cadastre todos os produtos que você tem na sua despensa, independente da categoria.</p>
+            <p>O nome do produto é obrigatório e não deve ter caracteres ou números.</p>
             <img src="/assets/images/estrela.png" class="img-star">
-            <p>Digite o nome e a marca.</p>
+            <p>Se o produto não tiver marca, deixar em branco.</p>
             <img src="/assets/images/estrela.png" class="img-star">
-            <p>Escolha o local de armazenamento.</p>
+            <p>O local de armazenamento também é obrigatório.</p>
             <img src="/assets/images/estrela.png" class="img-star">
-            <p>Digite a quantidade e escolha a unidade.</p>
+            <p>A quantidade deverá ser somente numérica.</p>
             <img src="/assets/images/estrela.png" class="img-star">
-            <p>Escolha a data de validade.</p>
+            <p>Escolha uma unidade do produto.</p>
             <img src="/assets/images/estrela.png" class="img-star">
-            <p>Selecione se a embalagem está aberta ou fechada.</p>
+            <p>O local de armazenamento também é obrigatório.</p>
+            <img src="/assets/images/estrela.png" class="img-star">
+            <p>Caso o produto não tenha embalagem, não selecionar nada na opção do Estado da embalagem.</p>
           </div>
         </div>
       </div>
@@ -31,103 +32,142 @@
       <div class="col s2">
         <div class="card card-central">
           <div class="card-content">
-            <div class="central-p">
-              <p class="txt">Categoria:</p>
-            </div>
-            <div class="central-input">
-              <select [(ngModel)]="opcaoSelecionada">
-                <option *ngFor="let opcao of opcoes" [value]="opcao.valor">{{opcao.nome}}</option>
-              </select>
-            </div>
-            <br>
-            <div class="central-p">
-              <p class="txt">Produto:</p>
-            </div>
-            <div class="central-input">
-              <input class="validate browser-default" style="margin-left: 27px;" placeholder="Digite o nome do produto" id="nome" type="text">
-            </div>
-            <br>
-            <div class="central-p">
-              <p class="txt">Marca:</p>
-            </div>
-            <div class="central-input">
-              <input class="validate browser-default" style="margin-left: 42px;" placeholder="Digite a marca do produto" id="marca" type="text">
-            </div>
-            <br>
-            <div class="central-p">
-              <p class="txt">Quantidade:</p>
-            </div>
-            <div class="central-input">
-              <input class="validate browser-default" placeholder="Digite a quantidade" id="quantidade" type="text">
-            </div>
-            <br>
-            <div class="central-p">
-              <p class="txt">Unidade:</p>
-            </div>
-            <div class="r-button">
-              <p>
-                <label>
-                  <input class="with-gap" name="group3" type="radio">
-                  <span>KG</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio">
-                  <span>Litro(s)</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio">
-                  <span>Pacote(s)</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio">
-                  <span>Unidade(s)</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio">
-                  <span>Caixa(s)</span>
-                </label>
-              </p>
-            </div>
+            <form [formGroup]="formulario" (ngSubmit)="cadastrar($event)">
 
-            <div class="central-p">
-              <p class="txt">Local de armazenamento:</p>
-            </div>
-            <div class="central-input">
+              <div class="central-p">
+                <p class="txt">Categoria: *</p>
+              </div>
+              <mat-form-field class="categoria" id="categoria">
+                <mat-select formControlName="selectedCategoria">
+                  <mat-option value="">Selecione uma opção</mat-option>
+                  <mat-option value="option1">Carnes</mat-option>
+                  <mat-option value="option2">Bebidas</mat-option>
+                  <mat-option value="option3">Frutas</mat-option>
+                  <mat-option value="option4">Verduras</mat-option>
+                  <mat-option value="option5">Mercearia</mat-option>
+                  <mat-option value="option12">Limpeza</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="red-text" *ngIf="formulario?.get('selectedCategoria')?.invalid">
+                Selecione uma categoria.
+              </div>
+              <br>
+              <div class="form-group">
+                <p class="txt" for="nome">Produto: *</p>
+                <input type="text" id="nome" class="form-control" formControlName="nome" (blur)="marcarCampoTocadoOuModificado('nome')" [class.is-invalid]="isCampoInvalido('nome') && (nomeFormControl?.touched || nomeFormControl?.dirty)">
+                <div class="red-text" *ngIf="isCampoInvalido('nome') && (nomeFormControl?.touched || nomeFormControl?.dirty)">
+                  Nome do produto deve estar preenchido!
+                </div>
+                <div class="red-text" *ngIf="nomeFormControl?.hasError('pattern')">
+                  Deve ter somente letras e espaços.
+                </div>
+              </div>
 
-            </div>
+              <br>
+              <div class="central-p">
+                <p class="txt">Marca: </p>
+              </div>
+              <div class="central-input">
+                <input type="text" id="marca" class="form-control" formControlName="marca" placeholder="Informe a marca do produto. Se não tiver, deixe em branco.">
+              </div>
+              <br>
 
-            <div class="central-p">
-              <p class="txt">Estado da embalagem:</p>
-            </div>
-            <div class="central-input">
+              <div class="central-p">
+                <p class="txt">Quantidade: *</p>
+              </div>
+              <div class="central-input">
+                <input type="text" id="quantidade" class="form-control" formControlName="quantidade" (blur)="marcarCampoTocadoOuModificado('quantidade')" [class.is-invalid]="isCampoInvalido('quantidade') && (nomeFormControl?.touched || nomeFormControl?.dirty)">
+              </div>
+                <div class="red-text" *ngIf="isCampoInvalido('quantidade') && (nomeFormControl?.touched || nomeFormControl?.dirty)">
+                  Quantidade do produto deve estar preenchida!
+                </div>
+                <div class="red-text" *ngIf="nomeFormControl?.hasError('pattern')">
+                  Deve ter somente números.
+                </div>
+              <br>
 
-            </div>
+              <div class="central-p">
+                <p class="txt">Unidade: *</p>
+              </div>
+              <div class="r-button">
+                <p>
+                  <label>
+                    <input class="with-gap" name="group3" type="radio" value="KG" formControlName = "selectedUnidade">
+                    <span>KG</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="group3" type="radio" value="Litro(s)" formControlName = "selectedUnidade">
+                    <span>Litro(s)</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="group3" type="radio" value="Pacote(s)" formControlName = "selectedUnidade">
+                    <span>Pacote(s)</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="group3" type="radio" value="Unidade(s)" formControlName = "selectedUnidade">
+                    <span>Unidade(s)</span>
+                  </label>
+                  <label>
+                    <input class="with-gap" name="group3" type="radio" value="Caixa(s)" formControlName = "selectedUnidade">
+                    <span>Caixa(s)</span>
+                  </label>
+                </p>
+                <div class="red-text" *ngIf="formulario?.get('selectedUnidade')?.hasError('required') && (formulario?.get('selectedUnidade')?.touched || formulario?.get('selectedUnidade')?.dirty)">
+                  Selecione uma unidade.
+                </div>
+              </div>
 
-            <div class="central-p">
-              <p class="txt">Data de validade:</p>
-            </div>
-            <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Escolha a data">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            </mat-form-field>
-            <mat-dialog-content>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-dialog-content>
-            <div class="central-input">
+              <br>
+              <div class="central-p">
+                <p class="txt">Local armazenado: *</p>
+              </div>
+              <mat-form-field class="categoria" id="local">
+                <mat-select formControlName="selectedLocal" >
+                  <mat-option value="">Selecione uma opção</mat-option>
+                  <mat-option value="option6">Armário</mat-option>
+                  <mat-option value="option7">Freezer</mat-option>
+                  <mat-option value="option8">Fruteira</mat-option>
+                  <mat-option value="option9">Geladeira</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="red-text" *ngIf="formulario?.get('selectedLocal')?.invalid && formulario?.get('selectedLocal')?.touched">
+                Selecione um local de armazenamento.
+              </div>
+              <br>
+              <div class="central-p">
+                <p class="txt">Estado da embalagem:</p>
+              </div>
+              <mat-form-field class="categoria" id="estado">
+                <mat-select formControlName="selectedEstado" >
+                  <mat-option value="">Selecione uma opção</mat-option>
+                  <mat-option value="option10">Aberta</mat-option>
+                  <mat-option value="option11">Fechada</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br>
 
-            </div>
+              <div class="central-p">
+                <p class="txt">Data de validade:</p>
+              </div>
+              <mat-form-field>
+                <mat-label>Data de validade:</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="selectedDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
 
-            <div class="central-p">
+              <div class="center-container">
+                <button type="submit" class="waves-effect waves-light btn-large btn-salvar" [disabled]="!formulario.valid">
+                  <i class="material-icons left">save</i>Salvar</button>
+                <button type="button" class="waves-effect waves-light btn-large btn-novo" (click)="confirmarNovo()">
+                  <i class="material-icons left">add_circle_outline</i>Novo
+                </button>
 
-            </div>
-            <div class="central-input">
-
-            </div>
-
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-
-  </div> -->
+  </div>
 </body>

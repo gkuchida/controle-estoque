@@ -1,0 +1,94 @@
+.h1{
+  color: #053A80;
+  font-size: 28px;
+  text-align: center;
+  width: max-content;
+}
+
+.card-geral{
+  background-color: #053a80;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 5px;
+  margin-top: 50px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 340px;
+}
+
+.card-lateral{
+  background-color: #E7EFFF;
+  width: 300px;
+  height: 700px;
+  gap: 600px;
+}
+
+.img-card{
+  position: relative;
+  top: 15px;
+  width: 130px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-detalhes{
+  position: relative;
+  margin-left: 50px;
+  top:10px;
+  color: #053A80;
+}
+
+.img-star{
+  width: 15px;
+  height: auto;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.items{
+  font-size: 14px;
+  text-align: center;
+  color: white;
+}
+
+.card-central{
+  width: 800px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.btn-card-princ{
+  background-color: #053a80;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+  margin-left: 30px;
+}
+
+.btn-card-princ-input{
+  background-color: #053a80;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+  margin-left: 30px;
+}
+
+.btn-salvar{
+  background-color: #053A80;
+  border-radius: 30px;
+}
+
+.center-container{
+  display: flex;
+  justify-content: center;
+}
+
+.txt{
+  font-size: 12px;
+}

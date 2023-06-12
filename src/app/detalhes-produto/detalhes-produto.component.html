@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col s3">
+    <div class="card small card-lateral">
+      <div class="card-content">
+        <img src="/assets/images/informacoes.png" class="img-card">
+        <h1 class="h1">Detalhes do Produtos</h1>
+        <div class="col s12 itens-card" *ngIf="produtoDetalhado">
+          <img src="/assets/images/estrela.png" class="img-star">
+          <p>Visualize os detalhes do produto selecionado <span class="produto">{{ produtoDetalhado.nome }}</span>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s9">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Produto</th>
+          <th>Marca</th>
+          <th>Quantidade</th>
+          <th>Unidade</th>
+          <th>Local armazenado</th>
+          <th>Estado da embalagem</th>
+          <th>Data de Validade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="produtoDetalhado">
+          <td>{{ getItemNome(produtoDetalhado.categoria) }}</td>
+          <td>{{ produtoDetalhado.nome }}</td>
+          <td>{{ produtoDetalhado.marca }}</td>
+          <td>{{ produtoDetalhado.quantidade }}</td>
+          <td>{{ produtoDetalhado.unidade}}</td>
+          <td>{{ getItemNome(produtoDetalhado.local) }}</td>
+          <td>{{ getItemNome(produtoDetalhado.estado) }}</td>
+          <td> {{selectedDate}} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
