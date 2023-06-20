@@ -1,0 +1,24 @@
+.custom-actions{
+  display: flex;
+  /* justify-content: flex-end; */
+  background-color: #053a80;
+  padding: 10px;
+}
+
+.btn-cancelar{
+  background-color: #053a80;
+  border: 2px solid green;
+  border-radius: 20px;
+  position: relative;
+  margin-left: 30px;
+  color: white;
+}
+
+.btn-confirmar{
+  background-color: #053a80;
+  border: 2px solid red;
+  border-radius: 20px;
+  position: relative;
+  margin-left: 30px;
+  color: white;
+}

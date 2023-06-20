@@ -1,0 +1,224 @@
+{
+  "produtos": [
+    {
+      "nome": "Mirtilo",
+      "marca": "peruana",
+      "quantidade": "1",
+      "categoria": "option3",
+      "local": "option8",
+      "unidade": "Caixa(s)",
+      "estado": "option11",
+      "data": null,
+      "id": 1
+    },
+    {
+      "nome": "Fanta",
+      "marca": "Uva",
+      "quantidade": "2",
+      "categoria": "option2",
+      "local": "option9",
+      "unidade": "Litro(s)",
+      "estado": "option10",
+      "data": "2023-06-30T03:00:00.000Z",
+      "id": 2
+    },
+    {
+      "nome": "Alface",
+      "marca": "Terra",
+      "quantidade": "1",
+      "categoria": "option4",
+      "local": "option9",
+      "unidade": "Unidade(s)",
+      "estado": "option10",
+      "data": "2023-06-21T03:00:00.000Z",
+      "id": 3
+    },
+    {
+      "nome": "Arroz",
+      "marca": "Prato fino",
+      "quantidade": "5",
+      "categoria": "option5",
+      "local": "option6",
+      "unidade": "KG",
+      "estado": "option11",
+      "data": "2023-06-30T03:00:00.000Z",
+      "id": 4
+    },
+    {
+      "nome": "Sabão",
+      "marca": "Omo",
+      "quantidade": "4",
+      "categoria": "option12",
+      "local": "option6",
+      "unidade": "KG",
+      "estado": "option10",
+      "data": "2023-06-28T03:00:00.000Z",
+      "id": 5
+    },
+    {
+      "nome": "Maçã",
+      "marca": "",
+      "quantidade": "3",
+      "categoria": "option3",
+      "local": "option8",
+      "unidade": "Unidade(s)",
+      "estado": "option10",
+      "data": "2023-06-21T03:00:00.000Z",
+      "id": 6
+    },
+    {
+      "nome": "Coca",
+      "marca": "Cola",
+      "quantidade": "5",
+      "categoria": "option2",
+      "local": "option9",
+      "unidade": "Litro(s)",
+      "estado": "option11",
+      "data": "2023-06-29T03:00:00.000Z",
+      "id": 7
+    },
+    {
+      "nome": "Banana",
+      "marca": "da terra",
+      "quantidade": "12",
+      "categoria": "option3",
+      "local": "option8",
+      "unidade": "Unidade(s)",
+      "estado": "option10",
+      "data": "2023-06-21T03:00:00.000Z",
+      "id": 8
+    },
+    {
+      "nome": "Batata",
+      "marca": "",
+      "quantidade": "5",
+      "categoria": "option4",
+      "local": "option8",
+      "unidade": "KG",
+      "estado": "option11",
+      "data": "",
+      "id": 9
+    },
+    {
+      "nome": "Feijão",
+      "marca": "Urbano",
+      "quantidade": "5",
+      "categoria": "option5",
+      "local": "option6",
+      "unidade": "KG",
+      "estado": "option11",
+      "data": "2023-07-28T03:00:00.000Z",
+      "id": 10
+    },
+    {
+      "nome": "Detergente",
+      "marca": "Ype",
+      "quantidade": "2",
+      "categoria": "option12",
+      "local": "option6",
+      "unidade": "Unidade(s)",
+      "estado": "option10",
+      "data": "2023-06-29T03:00:00.000Z",
+      "id": 11
+    },
+    {
+      "nome": "Acém",
+      "marca": "",
+      "quantidade": "5",
+      "categoria": "option1",
+      "local": "option9",
+      "unidade": "KG",
+      "estado": "option11",
+      "data": "2023-06-27T03:00:00.000Z",
+      "id": 15
+    },
+    {
+      "nome": "Escarola",
+      "marca": "Hidro",
+      "quantidade": "1",
+      "categoria": "option4",
+      "local": "option9",
+      "unidade": "Unidade(s)",
+      "estado": "option11",
+      "data": "",
+      "id": 16
+    },
+    {
+      "nome": "Canjica",
+      "marca": "Amafil",
+      "quantidade": "1",
+      "categoria": "option5",
+      "local": "option6",
+      "unidade": "Pacote(s)",
+      "estado": "option11",
+      "data": "2023-06-30T03:00:00.000Z",
+      "id": 17
+    },
+    {
+      "nome": "Grão de bico",
+      "marca": "Amafil",
+      "quantidade": "1",
+      "categoria": "option5",
+      "local": "option6",
+      "unidade": "KG",
+      "estado": "option11",
+      "data": "2023-06-22T03:00:00.000Z",
+      "id": 18
+    },
+    {
+      "nome": "Chuchu",
+      "marca": "",
+      "quantidade": "5",
+      "categoria": "option4",
+      "local": "option9",
+      "unidade": "KG",
+      "estado": "option10",
+      "data": "2023-06-22T03:00:00.000Z",
+      "id": 19
+    },
+    {
+      "nome": "Esponja",
+      "marca": "Brite",
+      "quantidade": "3",
+      "categoria": "option12",
+      "local": "option6",
+      "unidade": "Unidade(s)",
+      "estado": "option10",
+      "data": "2023-06-30T03:00:00.000Z",
+      "id": 22
+    },
+    {
+      "nome": "Lombo",
+      "marca": "Swift",
+      "quantidade": "5",
+      "categoria": "option1",
+      "local": "option7",
+      "unidade": "KG",
+      "estado": "option11",
+      "data": "2023-07-28T03:00:00.000Z",
+      "id": 23
+    },
+    {
+      "nome": "Cenoura",
+      "marca": "",
+      "quantidade": "2",
+      "categoria": "option4",
+      "local": "option9",
+      "unidade": "Unidade(s)",
+      "estado": "",
+      "data": "",
+      "id": 25
+    },
+    {
+      "nome": "Macarrão",
+      "marca": "Casarão",
+      "quantidade": "1",
+      "categoria": "option5",
+      "local": "option6",
+      "unidade": "Pacote(s)",
+      "estado": "option11",
+      "data": "2023-06-30T03:00:00.000Z",
+      "id": 26
+    }
+  ]
+}

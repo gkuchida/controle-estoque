@@ -27,20 +27,16 @@
 .central-p{
   display: inline-block;
   margin-right: 69px;
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 .central-input{
-  display: inline-block;
-  margin-left: auto;
-  margin-top: 10px;
-  width: 400px;
-  height: auto;
+  margin-top: 2px;
 }
 
 .input-field input{
   display: inline-block;
-    text-align: center;
+  text-align: center;
 }
 
 .img-card{
@@ -76,4 +72,45 @@
 
 .r-button span{
   padding-left: 25px;
+}
+
+.categoria{
+  position: relative;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.center-container{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-salvar{
+  background-color: #d32f2f;
+  border-radius: 30px;
+  margin-left: 100px;
+}
+
+.btn-novo{
+  background-color: #039be5;
+  border-radius: 30px;
+}
+
+.id-salvo{
+  background-color: #ff5722;
+  width: 800px;
+  height: 50px;
+}
+
+.id-salvo p{
+  font-size: 14px;
+  color: #053A80;
+  text-align: center;
+}
+
+.msg-salvo{
+  background-color: #0731e3;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
