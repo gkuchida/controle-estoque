@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col s3">
+    <div class="card small card-lateral">
+      <div class="card-content">
+        <img src="/assets/images/botao-atualizar.png" class="img-card">
+        <h1 class="h1">Atualize um Produto</h1>
+        <div class="col s12 itens-card">
+          <img src="/assets/images/estrela.png" class="img-star">
+          <p>Altere o campo que precisar e clique no botão SALVAR</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s2">
+    <div class="card card-central">
+      <div class="card-content">
+        <form [formGroup]="formulario" (ngSubmit)="atualizar()">
+          <label for="categoria"> Categoria:</label>
+            <mat-form-field class="categoria" id="categoria">
+              <mat-select formControlName="selectedCategoria">
+                <mat-option value="">Selecione uma opção</mat-option>
+                <mat-option value="option1">Carnes</mat-option>
+                <mat-option value="option2">Bebidas</mat-option>
+                <mat-option value="option3">Frutas</mat-option>
+                <mat-option value="option4">Verduras</mat-option>
+                <mat-option value="option5">Mercearia</mat-option>
+                <mat-option value="option12">Limpeza</mat-option>
+              </mat-select>
+            </mat-form-field>
+          <br>
+          <label for="nome"> Produto:</label>
+          <input type="text" id="nome" formControlName="nome" name="nome">
+          <br>
+          <label for="marca"> Marca:</label>
+          <input type="text" id="marca" formControlName="marca" name="marca">
+          <br>
+          <label for="quantidade"> Quantidade:</label>
+          <input type="text" id="quantidade" formControlName="quantidade" name="quantidade">
+          <br>
+          <label for="unidade"> Unidade:</label>
+          <div class="r-button">
+            <p>
+              <label>
+                <input class="with-gap" name="group3" type="radio" value="KG" formControlName = "selectedUnidade">
+                  <span>KG</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" value="Litro(s)" formControlName = "selectedUnidade">
+                  <span>Litro(s)</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" value="Pacote(s)" formControlName = "selectedUnidade">
+                  <span>Pacote(s)</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" value="Unidade(s)" formControlName = "selectedUnidade">
+                  <span>Unidade(s)</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" value="Caixa(s)" formControlName = "selectedUnidade">
+                  <span>Caixa(s)</span>
+              </label>
+              </p>
+          </div>
+          <br>
+          <label for="local"> Local armazenado:</label>
+            <mat-form-field class="categoria" id="local">
+              <mat-select formControlName="selectedLocal" >
+                <mat-option value="">Selecione uma opção</mat-option>
+                <mat-option value="option6">Armário</mat-option>
+                <mat-option value="option7">Freezer</mat-option>
+                <mat-option value="option8">Fruteira</mat-option>
+                <mat-option value="option9">Geladeira</mat-option>
+              </mat-select>
+            </mat-form-field>
+          <br>
+          <label for="estado"> Estado da embalagem:</label>
+            <mat-form-field class="categoria" id="estado">
+              <mat-select formControlName="selectedEstado" >
+                <mat-option value="">Selecione uma opção</mat-option>
+                <mat-option value="option10">Aberta</mat-option>
+                <mat-option value="option11">Fechada</mat-option>
+              </mat-select>
+            </mat-form-field>
+          <br>
+          <label for="data"> Data de Validade:</label>
+            <mat-form-field>
+              <mat-label>Data de validade:</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="selectedDate" [value]="selectedDate | date: 'dd/MM/yyyy'">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          <div class="center-container">
+            <button type="submit" class="waves-effect waves-light btn-large btn-salvar">
+              <i class="material-icons left">save</i>Salvar</button>
+          </div>
+          <br>
+          <div *ngIf="produtoAtualizado" class="msg-salvo"> Produto atualizado em {{ dataUltimaAtualizacao | date: 'dd/MM/yyyy - HH:mm'}} </div>
+        </form>
+      </div>
+    </div>
+  </div>
