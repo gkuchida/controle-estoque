@@ -20,6 +20,16 @@
   margin-top: 20px;
 }
 
+.card-info{
+  background-color: #eeeeee;
+  width: 1200px;
+  height: auto;
+  border-radius: 5px;
+  position: relative;
+  margin-left: 5px;
+  margin-top: 0;
+}
+
 .card-princ{
   background-color: #053a80;
   width: 220px;

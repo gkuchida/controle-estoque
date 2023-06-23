@@ -5,9 +5,22 @@ body{
 }
 
 main{
-  flex: 1 0 auto;
+  flex: 1;
 }
 
 .color{
   background-color: #074eab;
+}
+
+.page-footer{
+  flex-shrink: 0;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+  width: 100%;
+}
+
+.logo{
+  width: 100px;
+  height: auto;
 }

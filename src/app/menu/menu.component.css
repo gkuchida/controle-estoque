@@ -6,3 +6,15 @@
   font-size: 30px;
   color: #dbfc19;
 }
+
+.inicio{
+  position: absolute;
+  left: 10px;
+  top:10px
+}
+
+.voltar{
+  position: absolute;
+  left: 80px;
+  top:10px
+}

@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col s3">
+    <div class="card small card-lateral">
+      <div class="card-content">
+        <img src="assets/images/informacoes.png" class="img-card">
+        <h1 class="h1">Detalhes do Produtos</h1>
+        <div class="col s12 itens-card">
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Visualize os detalhes do produto selecionado <span class="produto">{{ produto.nome }}</span>.</p>
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Caso deseje excluir o produto, é só clicar no ícone de deletar <span style="color: red;"><i class="material-icons">delete</i></span></p>
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Caso queira fazer alguma alteração, basta clicar no ícone alterar <span style="color: blue;"><i class="material-icons">edit</i></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s9">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Produto</th>
+          <th>Marca</th>
+          <th>Quantidade</th>
+          <th>Unidade</th>
+          <th>Local armazenado</th>
+          <th>Estado da embalagem</th>
+          <th>Data de Validade</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ getCategoriaNome(produto.categoria) }}</td>
+          <td>{{ produto.nome }}</td>
+          <td>{{ produto.marca }}</td>
+          <td>{{ produto.quantidade }}</td>
+          <td>{{ produto.unidade}}</td>
+          <td>{{ getLocalNome(produto.local) }}</td>
+          <td>{{ getEstadoNome(produto.estado) }}</td>
+          <td> {{ produto.data | date: 'dd/MM/yyyy' }} </td>
+          <td><button (click)="openConfirmationDialog()" class="btn-excluir"><i class="material-icons">delete</i></button></td>
+          <td><a [routerLink]="['/editar', produto.nome]"><i class="material-icons" >edit</i></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="produto?.dataUltimaAtualizacao">
+      <p>Última atualização: {{ dataUltimaAtualizacao | date: 'dd/MM/yyyy - HH:mm' }} </p>
+    </div>
+  </div>
+</div>

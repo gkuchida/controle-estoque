@@ -1,12 +1,13 @@
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatInputModule} from '@angular/material/input';
 import { MatNativeDateModule} from '@angular/material/core';
 import { MatDialogModule} from '@angular/material/dialog';
+import { MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,13 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VisualizarComponent } from './visualizar/visualizar.component';
+import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
+import { ExcluirComponent } from './excluir/excluir.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { AtualizarComponent } from './atualizar/atualizar.component';
+import { EditarComponent } from './editar/editar.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +30,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MenuComponent,
     FooterComponent,
     BodyComponent,
-    CadastroComponent
+    CadastroComponent,
+    VisualizarComponent,
+    DetalhesProdutoComponent,
+    ExcluirComponent,
+    ConfirmDialogComponent,
+    AtualizarComponent,
+    EditarComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +48,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
