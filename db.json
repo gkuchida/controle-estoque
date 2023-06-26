@@ -224,6 +224,18 @@
       "data": "2023-06-30T03:00:00.000Z",
       "dataUltimaAlteracao": "2023-06-19T18:58:27.448Z",
       "id": 29
+    },
+    {
+      "nome": "Pimentão",
+      "marca": "Verde",
+      "quantidade": "1",
+      "categoria": "option4",
+      "local": "option9",
+      "unidade": "Unidade(s)",
+      "estado": "",
+      "data": "",
+      "dataUltimaAlteracao": "2023-06-23T19:45:05.404Z",
+      "id": 30
     }
   ]
 }

@@ -4,7 +4,7 @@ Nele você poderá verificar dados como o local que o produto está armazenado, 
 
 ## Endereço de Deploy - GitHub Pages
 
-https://github.com/gkuchida/controle-estoque
+https://gkuchida.github.io/controle-estoque/
 
 ## Protótipo
 
