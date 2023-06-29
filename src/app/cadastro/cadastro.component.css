@@ -1,0 +1,116 @@
+.h1{
+  color: #053A80;
+  font-size: 28px;
+  text-align: center;
+  width: max-content;
+}
+
+.itens-card{
+  font-size: 16px;
+  text-align: justify;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.card-lateral{
+  background-color: #E7EFFF;
+  width: 300px;
+  height: auto;
+}
+
+.card-central{
+  width: 800px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.central-p{
+  display: inline-block;
+  margin-right: 69px;
+  margin-top: 2px;
+}
+
+.central-input{
+  margin-top: 2px;
+}
+
+.input-field input{
+  display: inline-block;
+  text-align: center;
+}
+
+.img-card{
+  position: relative;
+  top: 15px;
+  width: 130px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-star{
+  width: 15px;
+  height: auto;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.txt{
+  font-size: 18px;
+  margin-left: 50px;
+}
+
+.r-button{
+  display: inline-block;
+}
+
+.r-button label{
+  padding-right: 5px;
+}
+
+.r-button span{
+  padding-left: 25px;
+}
+
+.categoria{
+  position: relative;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.center-container{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-salvar{
+  background-color: #d32f2f;
+  border-radius: 30px;
+  margin-left: 100px;
+}
+
+.btn-novo{
+  background-color: #039be5;
+  border-radius: 30px;
+}
+
+.id-salvo{
+  background-color: #ff5722;
+  width: 800px;
+  height: 50px;
+}
+
+.id-salvo p{
+  font-size: 14px;
+  color: #053A80;
+  text-align: center;
+}
+
+.msg-salvo{
+  background-color: #0731e3;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}

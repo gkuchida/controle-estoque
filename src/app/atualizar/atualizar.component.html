@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col s3">
+    <div class="card small card-lateral">
+      <div class="card-content">
+        <img src="assets/images/botao-atualizar.png" class="img-card">
+        <h1 class="h1">Atualize um Produto</h1>
+        <div class="col s12 itens-card">
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Abriu um pacote?</p>
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Diminui a quantidade estocada?</p>
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Mudou o lugar que guardou seu produto?</p>
+          <p style="margin-top: 10px;"> Selecione o produto que deseja atualizar e clique no botão ATUALIZAR.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m7" >
+      <p class="txt-atu" style="margin-top: 50px;margin-left: 20px"> Foram encontrados {{ produtosCadastrados.length}} produto(s): </p>
+      <div class="card card-central grey lighten-3" >
+        <div class="card card-geral" *ngFor="let produto of produtosCadastrados">
+          <div class="card-image">
+            <img src="assets/images/despensa.jpg">
+          </div>
+          <div class="card-content">
+              <p class="items">Produto: {{ produto.nome }} </p>
+              <p class="items">Marca: {{ produto.marca}} </p>
+              <p class="items">Quantidade: {{ produto.quantidade}} {{produto.unidade}} </p>
+              <a [routerLink]="['/editar', produto.nome]" class="btn btn-primary btn-card-princ-input" style="margin-top: 25px; margin-left: 25px">
+                <i class="material-icons-outlined right" >autorenew</i>Atualizar</a>
+          </div>
+        </div>
+      </div>
+        <div *ngIf="produtosCadastrados.length === 0">
+          <p> Nenhum produto encontrado com o nome <span style="color: red; font-weight: bold;">{{ produtoAtualizar }}</span>.</p>
+        </div>
+    </div>
+  </div>
+</div>

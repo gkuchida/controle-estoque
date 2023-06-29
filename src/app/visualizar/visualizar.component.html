@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col s3">
+    <div class="card small card-lateral">
+      <div class="card-content">
+        <img src="assets/images/visualizador.png" class="img-card">
+        <h1 class="h1">Visualize os Produtos</h1>
+        <div class="col s12 itens-card">
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Verifique todos os produtos estocados na sua despensa.</p>
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Para maiores detalhes, clique no botão <span class="material-icons-outlined">info</span>.</p>
+          <br>
+          <img src="assets/images/estrela.png" class="img-star">
+          <p>Quantidade cadastrados: {{ quantidadeCad }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s9">
+    <div class="container">
+      <div class="card card-geral custom-margin" *ngFor="let produto of produtosCadastrados">
+        <p class="underline">Produto </p>
+        <p class="nome">{{ produto.nome }}</p>
+        <a (click)="onClickItem(produto)" class="btn-detalhes"><span class="material-icons-outlined">info</span></a>
+      </div>
+      <div *ngIf="produtosCadastrados.length === 0">
+        <p> Nenhum produto cadastrado!</p>
+      </div>
+    </div>
+  </div>
+</div>
